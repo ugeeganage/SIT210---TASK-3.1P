@@ -1,0 +1,24 @@
+// This #include statement was automatically added by the Particle IDE.
+
+#include "DS18.h"
+
+DS18 tempSensor(D4);
+int temp;
+void setup() {
+    pinMode(D7, OUTPUT);
+
+
+}
+
+void loop() {
+    if (tempSensor.read()) {
+   digitalWrite(D7, HIGH);
+   temp = (tempSensor.fahrenheit() * 100) / 100;
+
+   delay(1000);
+   digitalWrite(D7, LOW);
+
+   delay(4000);
+ }
+    
+}
